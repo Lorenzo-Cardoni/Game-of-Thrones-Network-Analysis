@@ -1,0 +1,11 @@
+Nodo	Centralità
+Tyrion-Lannister	0.1535
+Jon-Snow	0.1434
+Jaime-Lannister	0.1270
+Cersei-Lannister	0.1220
+Stannis-Baratheon	0.1119
+Arya-Stark	0.1057
+Catelyn-Stark	0.0943
+Sansa-Stark	0.0943
+Eddard-Stark	0.0931
+Robb-Stark	0.0931

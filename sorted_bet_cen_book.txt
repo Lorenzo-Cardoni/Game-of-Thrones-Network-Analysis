@@ -1,0 +1,11 @@
+Nodo	Centralità
+Jon-Snow	0.1921
+Tyrion-Lannister	0.1622
+Daenerys-Targaryen	0.1184
+Theon-Greyjoy	0.1113
+Stannis-Baratheon	0.1101
+Jaime-Lannister	0.1008
+Cersei-Lannister	0.0887
+Arya-Stark	0.0872
+Eddard-Stark	0.0787
+Robert-Baratheon	0.0782
