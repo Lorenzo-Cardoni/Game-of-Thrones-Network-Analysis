@@ -77,7 +77,6 @@ plt.grid(axis='y', alpha=0.75)
 plt.savefig('images//hist_weight_edges.jpg', format='jpg',bbox_inches='tight')
 plt.show()
 
-
 # Misure di centralità
 
 # Funzione per salvare i migliori nodi in base alla centralità
@@ -148,17 +147,21 @@ def save_top_centrality(G, centrality_dict, title, top_n=10, cmap="viridis"):
 
 # degree centrality
 degree_centrality = nx.degree_centrality(G)
-save_top_centrality(G, degree_centrality, "sorted_deg_cen_book")
+save_top_centrality(G, degree_centrality, "degree_centrality")
 
 # betweenness centrality
 betweenness_centrality = nx.betweenness_centrality(G)
-save_top_centrality(G, betweenness_centrality, "sorted_bet_cen_book")
+save_top_centrality(G, betweenness_centrality, "betweenness_centrality")
 
 # closeness centrality
 closeness_centrality = nx.closeness_centrality(G)
-save_top_centrality(G, closeness_centrality, "sorted_clos_cen_book")
+save_top_centrality(G, closeness_centrality, "closeness_centrality")
 
 # eigenvector centrality
 eigenvector_centrality = nx.eigenvector_centrality(G)
-save_top_centrality(G, eigenvector_centrality, "sorted_eig_cen_book")
+save_top_centrality(G, eigenvector_centrality, "eigenvector_centrality")
 
+# Calcolare il PageRank
+pagerank = nx.pagerank(G)
+# Visualizzare il grafo con colori in base ai valori di PageRank
+save_top_centrality(G, pagerank, "PageRank", cmap="plasma")

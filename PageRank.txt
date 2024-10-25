@@ -1,0 +1,11 @@
+Nodo	Centralit�
+Jon-Snow	0.0280
+Tyrion-Lannister	0.0252
+Daenerys-Targaryen	0.0188
+Arya-Stark	0.0175
+Jaime-Lannister	0.0166
+Stannis-Baratheon	0.0159
+Cersei-Lannister	0.0136
+Theon-Greyjoy	0.0133
+Robb-Stark	0.0122
+Catelyn-Stark	0.0116
