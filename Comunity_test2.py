@@ -2,6 +2,8 @@ import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 import numpy as np
+import community as community_louvain
+from netgraph import Graph
 
 # Lista dei file CSV dei libri
 file_list = ["dataset//book1.csv", "dataset//book2.csv", "dataset//book3.csv", "dataset//book4.csv", "dataset//book5.csv"]
@@ -28,36 +30,35 @@ for index, row in df_combined.iterrows():
     # Aggiungi gli archi con attributi 'weight' e 'book'
     G.add_edge(source, target, weight=weight, book=book)
 
-# Rilevazione delle comunità usando Louvain
-communities = nx.community.louvain_communities(G, seed=123)
 
-# Stampa le comunità identificate
-for i, community in enumerate(communities):
-    print(f"Comunità {i}: {community}")
+# # alternatively, we can infer the best partition using Louvain:
+node = 0
+node_to_community = community_louvain.best_partition(G)
 
-# Assegna un colore diverso a ciascuna comunità
-color_map = {}
-for i, community in enumerate(communities):
-    for node in community:
-        color_map[node] = i  # Assegna il colore della comunità al nodo
+for community_id, size in enumerate(partition_sizes):
+    for _ in range(size):
+        node_to_community[node] = community_id
+        node += 1
 
-# Genera una mappa di colori
-colors = [color_map[node] for node in G.nodes()]
+community_to_color = {
+    0 : 'tab:blue',
+    1 : 'tab:orange',
+    2 : 'tab:green',
+    3 : 'tab:red',
+    4 : 'tab:purple',
+    6 : 'tab:yellow',
+    7 : 'tab: brown',
+    8 : 'tab: pink',
+    9 : 'tab: gray',
+    10 : 'tab:olive',
+    11 : 'tab:cyan'  
+}
+node_color = {node: community_to_color[community_id] for node, community_id in node_to_community.items()}
 
-plt.figure(figsize=(12, 10))
-pos = nx.spring_layout(G, seed=42)  # Layout grafico per posizionare i nodi
-nx.draw_networkx_nodes(G, pos, node_color=colors, cmap=plt.cm.rainbow, node_size=100)
-nx.draw_networkx_edges(G, pos, alpha=0.3)
+Graph(G,
+      node_color=node_color, node_edge_width=0, edge_alpha=0.1,
+      node_layout='community', node_layout_kwargs=dict(node_to_community=node_to_community),
+      edge_layout='bundled', edge_layout_kwargs=dict(k=2000),
+)
 
-# Creazione della leggenda
-unique_communities = set(color_map.values())
-colors_map = plt.cm.rainbow(np.linspace(0, 1, len(unique_communities)))
-
-# Aggiungi la leggenda
-for i, community in enumerate(unique_communities):
-    plt.scatter([], [], color=colors_map[i], label=f'Comunità {community}', s=100)
-
-plt.legend(title="Comunità", loc='upper right')
-plt.title("Famiglie e Alleanze in Game of Thrones")
-plt.axis('off')  # Nasconde gli assi
 plt.show()

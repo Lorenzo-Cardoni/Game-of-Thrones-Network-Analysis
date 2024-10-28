@@ -10,7 +10,7 @@ x misure di centralità
 x centralità di pagerank
 
 x community detection
-- cliques e k-cores
+x cliques e k-cores
 
 - misura di densità di rete
 

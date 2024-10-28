@@ -1,0 +1,12 @@
+Le triadi piu' forti in GoT:
+
+1. Triade ['Daenerys-Targaryen', 'Barristan-Selmy', 'Hizdahr-zo-Loraq'] - Peso Totale: 213
+2. Triade ['Daenerys-Targaryen', 'Quentyn-Martell', 'Hizdahr-zo-Loraq'] - Peso Totale: 169
+3. Triade ['Daenerys-Targaryen', 'Daario-Naharis', 'Hizdahr-zo-Loraq'] - Peso Totale: 160
+4. Triade ['Daenerys-Targaryen', 'Hizdahr-zo-Loraq', 'Skahaz-mo-Kandaq'] - Peso Totale: 158
+5. Triade ['Daenerys-Targaryen', 'Barristan-Selmy', 'Quentyn-Martell'] - Peso Totale: 155
+6. Triade ['Jon-Snow', 'Stannis-Baratheon', 'Melisandre'] - Peso Totale: 153
+7. Triade ['Daenerys-Targaryen', 'Barristan-Selmy', 'Daario-Naharis'] - Peso Totale: 143
+8. Triade ['Daenerys-Targaryen', 'Missandei', 'Hizdahr-zo-Loraq'] - Peso Totale: 139
+9. Triade ['Jon-Snow', 'Tyrion-Lannister', 'Stannis-Baratheon'] - Peso Totale: 132
+10. Triade ['Daenerys-Targaryen', 'Barristan-Selmy', 'Skahaz-mo-Kandaq'] - Peso Totale: 129
