@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import community as community_louvain
 
+from pyvis.network import Network
+
 
 # Lista dei file CSV dei libri
 file_list = ["dataset//book1.csv", "dataset//book2.csv", "dataset//book3.csv", "dataset//book4.csv", "dataset//book5.csv"]
@@ -76,23 +78,10 @@ for bridge in bridges:
 # for u, v in edges_between_communities:
 #     print(f"{u} (famiglia {partition[u]}) - {v} (famiglia {partition[v]})")
 
-# Assegna un colore diverso a ciascuna comunità
-colors = [partition[node] for node in G.nodes()]
-
-plt.figure(figsize=(12, 10))
-pos = nx.fruchterman_reingold_layout(G, seed=42)  # Layout grafico per posizionare i nodi
-nx.draw_networkx_nodes(G, pos, node_color=colors, cmap=plt.cm.rainbow, linewidths = 0.30, node_size=50)
-nx.draw_networkx_edges(G, pos, alpha=0.3)
-# Creazione della leggenda
-unique_communities = set(partition.values())
-colors_map = plt.cm.rainbow(np.linspace(0, 1, len(unique_communities)))
-
-# Aggiungi la leggenda
-for i, community in enumerate(unique_communities):
-    plt.scatter([], [], color=colors_map[i], label=f'Comunità {community}', s=50)  # s è la dimensione della marker
-
-plt.legend(title="Comunità", loc='upper right')
-plt.title("Famiglie e Alleanze in Game of Thrones")
-plt.axis('off')  # Nasconde gli assi
-plt.show()
+node_degree = dict(G.degree)
+nx.set_node_attributes(G, node_degree, 'size')
+nx.set_node_attributes(G, partition, 'group')
+net = Network(notebook = True, width='1900px', height = "900px", bgcolor = '#222222', font_color = 'white')
+net.from_nx(G)
+net.show("GoT_community.html")
 

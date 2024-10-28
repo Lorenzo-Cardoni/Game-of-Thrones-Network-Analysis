@@ -69,7 +69,6 @@ nx.set_node_attributes(G, node_degree, 'size')
 net.from_nx(G)
 net.show("GoT.html")
 
-
 # Rilevazione delle comunità usando Louvain
 partition = community_louvain.best_partition(G)
 

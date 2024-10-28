@@ -3,6 +3,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from itertools import combinations
 import numpy as np
+from pyvis.network import Network
 
 # Funzione per trovare N-clan con una clique minima di 4 nodi
 def find_n_clans(G, N):
@@ -37,8 +38,22 @@ for index, row in df_combined.iterrows():
 # Trova tutte le clique nel grafo
 all_cliques = list(nx.find_cliques(G))
 
+
+pos = nx.kamada_kawai_layout(G) 
+
 # Trova la clique massima
 max_clique = max(all_cliques, key=len)
+subgraph = G.subgraph(max_clique)
+plt.figure(figsize=(8, 8))
+nx.draw(subgraph, pos = pos, with_labels=True, node_color='lightblue', node_size=100, font_size=10, font_weight='bold', edge_color='gray')
+plt.title("Clique Massima")
+plt.savefig('images//Clique Massima.jpg', format='jpg',bbox_inches='tight')
+plt.show()
+
+net = Network(notebook = True, width='1900px', height = "900px", bgcolor = '#222222', font_color = 'white')
+net.from_nx(subgraph)
+net.show("GoT_clique_max.html")
+
 print(f"Massima clique trovata ({len(max_clique)} nodi): {max_clique}")
 
 # Trova le clique di dimensione >= 4

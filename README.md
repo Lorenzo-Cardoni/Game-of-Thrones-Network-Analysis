@@ -6,12 +6,13 @@ necessaria la installazione della libreria networkX e matplotlib
 
 ## Analisi possibili:
 x grafo di relazioni
+
 x misure di centralità
+
 x centralità di pagerank
 
 x community detection
-x cliques e k-cores
 
-- misura di densità di rete
+x cliques e k-cores
 
 x analisi di bridge
