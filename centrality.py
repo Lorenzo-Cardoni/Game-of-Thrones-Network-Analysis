@@ -34,30 +34,8 @@ for index, row in df_combined.iterrows():
     # Aggiungi gli archi con attributi 'weight' e 'book'
     G.add_edge(source, target, weight=weight, book=book)
 
-# Verifica: Mostra alcune informazioni del grafo
-# print(G.edges(data=True))
-    
-# Disegna il grafo con i nomi dei nodi
-plt.figure(figsize=(8,6))
 
-# Layout del grafo
-# altri layout:
-# - circular_layout
-# - spectral_layout
-# - shell_layout
-# - fruchterman_reingold_layout
-pos = nx.spring_layout(G)  
-# Disegnare nodi e archi
-nx.draw(G, pos, with_labels=False, node_color="blue", edge_color="black", node_size=50, font_size=4, font_weight="bold")
-# Aggiungi un titolo
-plt.title('Visualizzazione del Grafo')
-# Nascondi gli assi
-plt.axis('off')
-plt.savefig('images//graph.jpg', format='jpg', bbox_inches='tight')
-# Mostra il grafo
-plt.show()
-
-
+"""
 # Distribuzione peso delle relazioni
 
 # Estrai i pesi degli archi
@@ -67,6 +45,7 @@ weights = [G[u][v]['weight'] for u, v in G.edges()]
 weight_counts = pd.Series(weights).value_counts().sort_index()
 
 # Crea il grafico a barre della distribuzione dei pesi
+
 plt.figure(figsize=(10, 6))
 weight_counts.plot(kind='bar', color='blue', edgecolor='black')
 plt.title('Distribuzione dei Pesi degli Archi (in ordine crescente)')
@@ -76,7 +55,7 @@ plt.xticks(rotation=0)  # Ruota le etichette dell'asse x per una migliore leggib
 plt.grid(axis='y', alpha=0.75)
 plt.savefig('images//hist_weight_edges.jpg', format='jpg',bbox_inches='tight')
 plt.show()
-
+"""
 # Misure di centralità
 
 # Funzione per salvare i migliori nodi in base alla centralità
@@ -100,7 +79,6 @@ def save_top_centrality(G, centrality_dict, title, top_n=10, cmap="viridis"):
     print(f"I migliori {top_n} nodi sono stati salvati in {title}.txt.")
 
     # HEAT MAP
-
     pos = nx.spring_layout(G) 
     # Creare un array con i valori di centralità per colorare i nodi
     centrality_values = np.array(list(centrality_dict.values()))
@@ -124,10 +102,16 @@ def save_top_centrality(G, centrality_dict, title, top_n=10, cmap="viridis"):
 
 
     # TOP 10 NODI
+    centrality_dict = pd.DataFrame.from_dict(centrality_dict, orient = 'index', columns=['centrality'])
+    # Plot top 10 nodes
+    centrality_dict.sort_values('centrality', ascending = False)[0:9].plot(kind="bar",figsize=(15, 7), title=f"Top 10 Nodi per {title}")
+    plt.xticks(rotation=0)  # Ruota le etichette dell'asse x per una migliore leggibilità
+    plt.savefig(f'images//{title}_hist.jpg', format='jpg',bbox_inches='tight')
 
+    """
     # Prendere i migliori top_n nodi
     top_nodes = [node for node, _ in sorted_centrality]
-    
+
     # Estrarre il sotto-grafo contenente solo i migliori nodi
     subgraph = G.subgraph(top_nodes)
     # Creare un array con i valori di centralità per colorare i nodi
@@ -143,7 +127,7 @@ def save_top_centrality(G, centrality_dict, title, top_n=10, cmap="viridis"):
     plt.title(title)
     plt.savefig('images//'+ title + '.jpg', format='jpg',bbox_inches='tight')
     plt.show()
-    
+    """
 
 # degree centrality
 degree_centrality = nx.degree_centrality(G)

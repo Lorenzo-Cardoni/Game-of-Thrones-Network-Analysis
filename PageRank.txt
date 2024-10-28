@@ -1,4 +1,4 @@
-Nodo	Centralitï¿½
+Nodo	Centralità
 Jon-Snow	0.0280
 Tyrion-Lannister	0.0252
 Daenerys-Targaryen	0.0188
