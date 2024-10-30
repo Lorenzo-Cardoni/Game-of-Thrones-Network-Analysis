@@ -17,7 +17,7 @@ L'obiettivo del progetto è analizzare la struttura della rete dei personaggi di
 
 ### Librerie Necessarie
 
-Le librerie utilizzate per il progetto sono elencate nel file `requirements.txt`. Per installarle tutte in una volta, usa il seguente comando:
+Le librerie utilizzate per il progetto sono elencate nel file `requirements.txt`. Per lo studio del grafo si è utilizzato l'ambiente Anaconda. Per installarle tutte in una volta, usa il seguente comando:
 
 ```bash
 conda create --name <env> --file requirements.txt
