@@ -23,4 +23,4 @@ Le librerie utilizzate per il progetto sono elencate nel file `requirements.txt`
 pip install -r requirements.txt
 ```
 ## Risultati
-Per osservare i risultati consultare il file pdf `Progetto_graph.pdf`
+Per osservare i risultati consultare il file pdf `Progetto_Graph.pdf`
