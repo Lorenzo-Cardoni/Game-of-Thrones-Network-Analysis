@@ -1,18 +1,23 @@
-# Game-of-Thrones-Network-Analysis
-Si utilizza la libreria NetworkX, potente per l'analisi delle reti sociali
+# Game of Thrones Network Analysis
 
-necessaria la installazione della libreria networkX e matplotlib
+Questo progetto applica metodi di analisi delle reti sociali a un dataset di interazioni tra i personaggi di *Game of Thrones*, utilizzando metriche di centralità e algoritmi di rilevamento delle comunità per estrarre informazioni chiave sui personaggi principali e le dinamiche sociali della serie.
 
+## Descrizione
 
-## Analisi possibili:
-x grafo di relazioni
+L'obiettivo del progetto è analizzare la struttura della rete dei personaggi di *Game of Thrones* e identificare nodi influenti, gruppi sociali e comunità principali. Utilizziamo diverse misure di centralità e visualizziamo i risultati tramite grafici interattivi, con un'attenzione particolare ai seguenti elementi:
 
-x misure di centralità
+- **Degree Centrality**: misura la popolarità di ogni personaggio.
+- **Betweenness Centrality**: identifica i nodi che fungono da "ponti" nella rete.
+- **Closeness Centrality**: valuta la vicinanza di un personaggio agli altri.
+- **Eigenvector Centrality**: misura l'influenza di un personaggio in base all'importanza dei suoi vicini.
+- **PageRank**: identifica i personaggi a cui si può accedere con maggiore probabilità durante la navigazione della rete.
+- **Comunità (Louvain Algorithm)**: rilevamento di gruppi sociali (famiglie, fazioni) tra i personaggi.
 
-x centralità di pagerank
+## Requisiti
 
-x community detection
+### Librerie Necessarie
 
-x cliques e k-cores
+Le librerie utilizzate per il progetto sono elencate nel file `requirements.txt`. Per installarle tutte in una volta, usa il seguente comando:
 
-x analisi di bridge
+```bash
+pip install -r requirements.txt
