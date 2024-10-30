@@ -1,3 +1,7 @@
+"""
+centrality.py fornisce le misure di centralità del grafo
+"""
+
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt

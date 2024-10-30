@@ -1,3 +1,7 @@
+"""
+Analisi delle Clique all'interno del grafo
+"""
+
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt

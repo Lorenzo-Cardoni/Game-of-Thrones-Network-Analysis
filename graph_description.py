@@ -1,3 +1,7 @@
+"""
+Analisi descrittiva generale del grafo
+
+"""
 import pandas as pd
 import networkx as nx
 

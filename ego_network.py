@@ -1,3 +1,7 @@
+"""
+Analisi delle ego_network tra Jon Snow e Tyrion
+"""
+
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt

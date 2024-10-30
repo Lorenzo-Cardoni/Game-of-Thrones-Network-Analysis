@@ -1,3 +1,7 @@
+"""
+SNA.py genera graficamente il grafo
+"""
+
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -67,12 +71,3 @@ node_degree = dict(G.degree)
 nx.set_node_attributes(G, node_degree, 'size')
 
 net.from_nx(G)
-net.show("GoT.html")
-
-# Rilevazione delle comunità usando Louvain
-partition = community_louvain.best_partition(G)
-
-nx.set_node_attributes(G, partition, 'group')
-net = Network(notebook = True, width='1900px', height = "900px", bgcolor = '#222222', font_color = 'white')
-net.from_nx(G)
-net.show("GoT_community.html")

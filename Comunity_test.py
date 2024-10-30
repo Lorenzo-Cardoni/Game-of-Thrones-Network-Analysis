@@ -1,3 +1,10 @@
+"""
+Community_test.py fornisce le comunità rilevate con i loro nodi più popolari.
+Si fornisce anche graficamente la visualizzazione delle comunità nel grafo
+
+"""
+
+
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt

@@ -1,3 +1,7 @@
+"""
+k_cores.py fornisce una analisi del grafo tramite k_Core
+"""
+
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
