@@ -20,4 +20,7 @@ L'obiettivo del progetto è analizzare la struttura della rete dei personaggi di
 Le librerie utilizzate per il progetto sono elencate nel file `requirements.txt`. Per installarle tutte in una volta, usa il seguente comando:
 
 ```bash
-pip install -r requirements.txt
+conda create --name <env> --file requirements.txt
+```
+## Risultati
+Per osservare i risultati consultare il file pdf `Progetto_Graph.pdf`
