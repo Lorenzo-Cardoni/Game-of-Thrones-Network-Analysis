@@ -15,7 +15,7 @@ from pyvis.network import Network
 
 
 # Lista dei file CSV dei libri
-file_list = ["dataset//book1.csv", "dataset//book2.csv", "dataset//book3.csv", "dataset//book4.csv", "dataset//book5.csv"]
+file_list = ["..//dataset//book1.csv", "..//dataset//book2.csv", "..//dataset//book3.csv", "..//dataset//book4.csv", "..//dataset//book5.csv"]
 
 # Leggiamo e uniamo i file CSV
 df_list = [pd.read_csv(file) for file in file_list]
@@ -90,5 +90,5 @@ nx.set_node_attributes(G, node_degree, 'size')
 nx.set_node_attributes(G, partition, 'group')
 net = Network(notebook = True, width='1900px', height = "900px", bgcolor = '#222222', font_color = 'white')
 net.from_nx(G)
-net.show("GoT_community.html")
+net.show("..//GoT_community.html")
 

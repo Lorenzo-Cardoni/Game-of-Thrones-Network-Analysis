@@ -7,7 +7,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # Lista dei file CSV dei libri
-file_list = ["dataset//book1.csv", "dataset//book2.csv", "dataset//book3.csv", "dataset//book4.csv", "dataset//book5.csv"]
+file_list = ["..//dataset//book1.csv", "..//dataset//book2.csv", "..//dataset//book3.csv", "..//dataset//book4.csv", "..//dataset//book5.csv"]
 
 # Leggiamo e uniamo i file CSV
 df_list = [pd.read_csv(file) for file in file_list]
@@ -38,7 +38,7 @@ nx.draw_networkx_nodes(k_core, pos, node_size=100, node_color='lightblue')
 nx.draw_networkx_edges(k_core, pos, alpha=0.3)
 nx.draw_networkx_labels(k_core, pos, font_size=8, font_weight="bold")
 plt.title("k-core del Grafo (Personaggi con almeno grado 13)")
-plt.savefig('images//kcore_Massimo.jpg', format='jpg',bbox_inches='tight')
+plt.savefig('..//images//kcore_Massimo.jpg', format='jpg',bbox_inches='tight')
 plt.show()
 """
 # Visualizzazione dei core per valori di k

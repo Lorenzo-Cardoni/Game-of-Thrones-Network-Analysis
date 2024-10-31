@@ -7,7 +7,7 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # Lista dei file CSV dei libri
-file_list = ["dataset//book1.csv", "dataset//book2.csv", "dataset//book3.csv", "dataset//book4.csv", "dataset//book5.csv"]
+file_list = ["..//dataset//book1.csv", "..//dataset//book2.csv", "..//dataset//book3.csv", "..//dataset//book4.csv", "..//dataset//book5.csv"]
 
 # Leggiamo e uniamo i file CSV
 df_list = [pd.read_csv(file) for file in file_list]

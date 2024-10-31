@@ -26,7 +26,8 @@ def find_n_clans(G, N):
     return n_clans
 
 # Lettura e unione dei dati
-file_list = ["dataset//book1.csv", "dataset//book2.csv", "dataset//book3.csv", "dataset//book4.csv", "dataset//book5.csv"]
+file_list = ["..//dataset//book1.csv", "..//dataset//book2.csv", "..//dataset//book3.csv", "..//dataset//book4.csv", "..//dataset//book5.csv"]
+
 df_list = [pd.read_csv(file) for file in file_list]
 df_combined = pd.concat(df_list, ignore_index=True)
 df_combined.drop_duplicates(inplace=True)
@@ -51,12 +52,12 @@ subgraph = G.subgraph(max_clique)
 plt.figure(figsize=(8, 8))
 nx.draw(subgraph, pos = pos, with_labels=True, node_color='lightblue', node_size=100, font_size=10, font_weight='bold', edge_color='gray')
 plt.title("Clique Massima")
-plt.savefig('images//Clique Massima.jpg', format='jpg',bbox_inches='tight')
+plt.savefig('..//images//Clique Massima.jpg', format='jpg',bbox_inches='tight')
 plt.show()
 
 net = Network(notebook = True, width='1900px', height = "900px", bgcolor = '#222222', font_color = 'white')
 net.from_nx(subgraph)
-net.show("GoT_clique_max.html")
+net.show("..//GoT_clique_max.html")
 
 print(f"Massima clique trovata ({len(max_clique)} nodi): {max_clique}")
 

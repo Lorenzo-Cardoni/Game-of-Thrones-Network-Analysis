@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Lista dei file CSV dei libri
-file_list = ["dataset//book1.csv", "dataset//book2.csv", "dataset//book3.csv", "dataset//book4.csv", "dataset//book5.csv"]
+file_list = ["..//dataset//book1.csv", "..//dataset//book2.csv", "..//dataset//book3.csv", "..//dataset//book4.csv", "..//dataset//book5.csv"]
 
 # Leggiamo e uniamo i file CSV
 df_list = [pd.read_csv(file) for file in file_list]
@@ -75,12 +75,6 @@ def save_top_centrality(G, centrality_dict, title, top_n=10, cmap="viridis"):
     # Ordinare i nodi in base alla centralità (dal più alto al più basso)
     sorted_centrality = sorted(centrality_dict.items(), key=lambda x: x[1], reverse=True)[:top_n]
     
-    # Scrivere i risultati in un file di testo
-    with open(title + '.txt', 'w') as f:
-        f.write("Nodo\tCentralità\n")  # Intestazione
-        for node, centrality in sorted_centrality:
-            f.write(f"{node}\t{centrality:.4f}\n")  # Formattazione a 4 decimali
-    print(f"I migliori {top_n} nodi sono stati salvati in {title}.txt.")
 
     # HEAT MAP
     pos = nx.spring_layout(G) 
@@ -101,7 +95,7 @@ def save_top_centrality(G, centrality_dict, title, top_n=10, cmap="viridis"):
     plt.colorbar(sm, label=f"Valore di {title}")
     
     plt.title(f"Heatmap dei Nodi per {title}")
-    plt.savefig(f'images//{title}_heatmap.jpg', format='jpg',bbox_inches='tight')
+    plt.savefig(f'..//images//{title}_heatmap.jpg', format='jpg',bbox_inches='tight')
     plt.show()
 
 
@@ -110,7 +104,7 @@ def save_top_centrality(G, centrality_dict, title, top_n=10, cmap="viridis"):
     # Plot top 10 nodes
     centrality_dict.sort_values('centrality', ascending = False)[0:9].plot(kind="bar",figsize=(15, 7), title=f"Top 10 Nodi per {title}")
     plt.xticks(rotation=0)  # Ruota le etichette dell'asse x per una migliore leggibilità
-    plt.savefig(f'images//{title}_hist.jpg', format='jpg',bbox_inches='tight')
+    plt.savefig(f'..//images//{title}_hist.jpg', format='jpg',bbox_inches='tight')
 
     """
     # Prendere i migliori top_n nodi
